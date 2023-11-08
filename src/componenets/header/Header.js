@@ -3,10 +3,14 @@ import './_header.scss'
 import {FaBars} from 'react-icons/fa'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { MdNotifications, MdApps } from 'react-icons/md'
-const Header = () => {
+const Header = ({openSidebar}) => {
   return (
     <div className='header'>
-      <FaBars className='header_menu' size={26} />
+      <FaBars 
+        className='header_menu' 
+        size={26} 
+        onClick={() => openSidebar()}/>
+
         <img 
           src='http://pngimg.com/uploads/youtube/youtube_PNG2.png' 
           className='header_logo'
