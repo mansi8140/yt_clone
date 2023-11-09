@@ -13,7 +13,7 @@ const App = () => {
   return (
     <>
     <Header openSidebar = {openSidebar} />
-    <div className='app-container border obrder-info'>
+    <div className='app-container'>
       <Sidebar sidebar={sidebar} openSidebar = {openSidebar}/>
       <Container fluid className='app_main'>
         <HomeScreen />
