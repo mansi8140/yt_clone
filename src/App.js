@@ -1,25 +1,34 @@
-import React, { useState } from 'react'
-import Header from './componenets/header/Header'
-import Sidebar from './componenets/sidebar/Sidebar'
+import React from 'react'
 import HomeScreen from './screens/homeScreen/HomeScreen'
-import { Container } from 'react-bootstrap'
+import LoginScreen from './screens/loginScreen/LoginScreen'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Layout from './Layout'
 import './_app.scss'
+
 const App = () => {
 
-  const [sidebar, isopenSidebar] = useState(false);
-
-  const openSidebar = () => isopenSidebar(value => !value)
-
   return (
-    <>
-    <Header openSidebar = {openSidebar} />
-    <div className='app-container'>
-      <Sidebar sidebar={sidebar} openSidebar = {openSidebar}/>
-      <Container fluid className='app_main'>
-        <HomeScreen />
-      </Container>
-    </div>
-    </>
+    <Router>
+     
+      <Routes> {/* best match instead of being traversed in order. */}
+        <Route path='/' exact element = {
+           <Layout component={<HomeScreen />} /> 
+          } 
+        />
+        
+        <Route  path='/login' element = {
+            <LoginScreen />
+          } 
+        />
+          
+
+        <Route path='/search'element = {
+           <Layout component={<h1>This is search screen</h1>} />
+          } 
+        />
+      </Routes>
+    
+    </Router>
   )
 }
 

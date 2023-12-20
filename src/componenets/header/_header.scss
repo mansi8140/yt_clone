@@ -8,12 +8,13 @@
     padding: 1rem 3rem;
 
     background-color: $black-primary;
-
+    z-index: 999;
     height: 10vh;
     width: 100%;
 
     &_menu{
         display: none;
+        cursor: pointer;
     }
 
     &_logo{

@@ -12,9 +12,7 @@
 
     transition: transform 0.2s ease-in;
 
-    &.open{
-       transform: translateX(0);
-    }
+    
 
     li{
         display: flex;
@@ -41,6 +39,10 @@
     hr{
         background-color: $border-color;
     }
+
+    &.open{
+        transform: translateX(0);
+     }
 }
 
 @media(max-width: $breakpoint-small){
@@ -48,5 +50,18 @@
         transform: translateX(-100%);
         position: fixed;
         z-index: 999;
+    }
+}
+
+@media(max-width: $breakpoint-medium){
+    .sidebar{
+        width: 90px;
+        li{
+            justify-content: center;
+
+        }
+        span{
+            display: none;
+        }
     }
 }
